@@ -17,9 +17,9 @@ class RootTVC: UITableViewController {
     var emails = [Email]()
     var delegate: CellSelectedDelegate?
     var selectedRow: String = ""
-    let addButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.plain, target: self, action: #selector(addTapped))
+    let addButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.plain, target: self, action: #selector(RootTVC.addTapped))
     
-    func addTapped(_sender:UIBarButtonItem) {
+    func addTapped() {
         print("add button works")
         self.tableView.beginUpdates()
         emails.append(Email(sender:"spam@asu.edu", recipient: "me@asu.edu", subject: "Spam", contents: "Only spam"))
