@@ -12,7 +12,8 @@ class ViewController: UIViewController, CellSelectedDelegate {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var senderLabel: UILabel!
     @IBOutlet weak var contentsLabel: UILabel!
-
+    @IBOutlet weak var recipientLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,6 +28,7 @@ class ViewController: UIViewController, CellSelectedDelegate {
         //read this email
         titleLabel.text = email.subject
         senderLabel.text = email.sender
+        recipientLabel.text = email.recipient
         contentsLabel.text = email.contents
     }
 }

@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="VNr-rL-tG7">
             <objects>
-                <viewController id="R4n-Ci-fwe" customClass="ViewController" customModule="EmailExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="root" id="R4n-Ci-fwe" customClass="ViewController" customModule="EmailExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YLk-9i-h8o"/>
                         <viewControllerLayoutGuide type="bottom" id="loG-ov-aMP"/>
@@ -23,19 +23,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hna-vf-ziK">
-                                <rect key="frame" x="16" y="28" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Sender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSs-3c-F1a">
-                                <rect key="frame" x="16" y="57" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="16" y="66" width="343" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Recipient" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tao-5o-RyI">
+                                <rect key="frame" x="16" y="92" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Contents" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5y-YE-WdU">
-                                <rect key="frame" x="16" y="86" width="343" height="21"/>
+                                <rect key="frame" x="16" y="121" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,18 +49,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HSs-3c-F1a" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="19p-Ys-6ii"/>
                             <constraint firstItem="HSs-3c-F1a" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="78f-Cy-wnF"/>
                             <constraint firstItem="Hna-vf-ziK" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="7r8-LZ-GMR"/>
-                            <constraint firstItem="y5y-YE-WdU" firstAttribute="top" secondItem="HSs-3c-F1a" secondAttribute="bottom" constant="8" id="HQC-sR-JDe"/>
+                            <constraint firstItem="y5y-YE-WdU" firstAttribute="top" secondItem="tao-5o-RyI" secondAttribute="bottom" constant="8" id="HPw-ge-ylm"/>
+                            <constraint firstItem="y5y-YE-WdU" firstAttribute="top" secondItem="HSs-3c-F1a" secondAttribute="bottom" constant="37" id="HQC-sR-JDe"/>
                             <constraint firstItem="y5y-YE-WdU" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="HQU-pC-aji"/>
+                            <constraint firstItem="tao-5o-RyI" firstAttribute="top" secondItem="HSs-3c-F1a" secondAttribute="bottom" constant="8" id="I1x-qp-m0m"/>
+                            <constraint firstItem="HSs-3c-F1a" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="Kp2-Y6-28I"/>
                             <constraint firstItem="HSs-3c-F1a" firstAttribute="top" secondItem="Hna-vf-ziK" secondAttribute="bottom" constant="8" id="LzE-GC-W7v"/>
+                            <constraint firstItem="HSs-3c-F1a" firstAttribute="top" secondItem="Hna-vf-ziK" secondAttribute="bottom" constant="8" id="QhJ-FZ-9A2"/>
                             <constraint firstItem="HSs-3c-F1a" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="WOp-Xd-1e3"/>
+                            <constraint firstItem="tao-5o-RyI" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="XmI-Jf-TqO"/>
                             <constraint firstItem="Hna-vf-ziK" firstAttribute="top" secondItem="YLk-9i-h8o" secondAttribute="bottom" constant="8" id="a2r-kc-52h"/>
+                            <constraint firstItem="Hna-vf-ziK" firstAttribute="leading" secondItem="rE6-tc-vsJ" secondAttribute="leadingMargin" id="a47-FX-E0X"/>
                             <constraint firstItem="y5y-YE-WdU" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="aSI-KG-Pnu"/>
                             <constraint firstItem="Hna-vf-ziK" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="bcQ-I6-y02"/>
+                            <constraint firstItem="tao-5o-RyI" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="c8G-SE-jPd"/>
+                            <constraint firstItem="tao-5o-RyI" firstAttribute="top" secondItem="HSs-3c-F1a" secondAttribute="bottom" constant="8" id="chn-sf-o5u"/>
+                            <constraint firstItem="Hna-vf-ziK" firstAttribute="top" secondItem="YLk-9i-h8o" secondAttribute="bottom" constant="8" id="gR1-3u-nJW"/>
+                            <constraint firstItem="Hna-vf-ziK" firstAttribute="trailing" secondItem="rE6-tc-vsJ" secondAttribute="trailingMargin" id="j3Q-C4-Xvz"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="RecipientLabel" destination="tao-5o-RyI" id="6uo-qV-MKD"/>
                         <outlet property="contentsLabel" destination="y5y-YE-WdU" id="Ffu-ue-d6y"/>
                         <outlet property="senderLabel" destination="HSs-3c-F1a" id="O0f-kE-j8N"/>
                         <outlet property="titleLabel" destination="Hna-vf-ziK" id="Hah-1r-sE3"/>

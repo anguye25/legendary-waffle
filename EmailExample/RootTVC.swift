@@ -16,7 +16,18 @@ class RootTVC: UITableViewController {
     
     var emails = [Email]()
     var delegate: CellSelectedDelegate?
+    var selectedRow: String = ""
+    let addButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.plain, target: self, action: #selector(addTapped))
+    
+    func addTapped(_sender:UIBarButtonItem) {
+        print("add button works")
+        self.tableView.beginUpdates()
+        emails.append(Email(sender:"spam@asu.edu", recipient: "me@asu.edu", subject: "Spam", contents: "Only spam"))
+        self.tableView.insertRows(at: [IndexPath(row: emails.count+1,section: 1)], with: .automatic)
+        self.tableView.endUpdates()
+    }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,9 +35,17 @@ class RootTVC: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
+        if selectedRow == "Inbox" {
+            self.navigationItem.rightBarButtonItem = self.editButtonItem
+        }
+        
+        if selectedRow == "Sent" {
+            self.navigationItem.rightBarButtonItem = addButton
 
+        }
+ 
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,6 +69,7 @@ class RootTVC: UITableViewController {
         
         let selectedEmail = emails[indexPath.row]
         delegate?.read(email: selectedEmail)
+
     }
 
     
@@ -64,26 +84,41 @@ class RootTVC: UITableViewController {
         return cell
     }
     
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
+        /*
+       let selectedCell = tableView.cellForRow(at: indexPath)
+        
+        if selectedCell?.textLabel?.text == "Inbox" {
+            return true
+        }
+        return false
+ */
         return true
     }
-    */
-
-    /*
+ */
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            self.tableView.beginUpdates()
+            emails.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
+            
+          //  insertRowsAtIndexPaths;:(emails[3])
+           // tableView.moveRow(at: [indexPath], to: emails[3])
+            self.tableView.endUpdates()
+        } else if editingStyle == UITableViewCellEditingStyle.insert {
+            
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+
+        }
     }
-    */
+ 
 
     /*
     // Override to support rearranging the table view.
